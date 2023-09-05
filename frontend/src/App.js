@@ -7,8 +7,8 @@ import Orb from "./Components/Orb/Orb";
 function App() {
   return (
     <AppStyled bg={bg} className="App">
+      <Orb/>
       <MainLayout>
-        <Orb/>
       </MainLayout>
     </AppStyled>
   );
