@@ -4,6 +4,9 @@ import { MainLayout } from "./styles/Layouts";
 import Orb from "./Components/Orb/Orb";
 import Navigation from "./Components/Navigation/Navigation";
 import React, {useMemo, useState}from "react";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Income from "./Components/Income/Income";
+import Expenses from "./Components/Expenses/Expenses";
 
 
 
@@ -11,6 +14,8 @@ import React, {useMemo, useState}from "react";
 function App() {
   const [active, setActive] = useState(1)
 
+
+  
   const displayData = () => {
     switch(active)
     {
@@ -44,7 +49,7 @@ function App() {
 }
       const AppStyled = styled.div`
       height: 100vh;
-      background-image: url(${bg})
+      background-image: url(${props => props.bg});
       position: relative;
       main{
         flex: 1;
