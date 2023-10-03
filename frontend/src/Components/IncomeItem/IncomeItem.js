@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { dateFormat } from '../../utils/dateFormat';
-import { bitcoin, book, calender, card, circle, clothing, comment, dollar, food, freelance, medical, money, piggy, stocks, takeaway, trash, tv, users, yt } from '../../utils/Icons';
+import { bitcoin, book, calender, card, circle, clothing, comment, food, freelance, medical, money, piggy, rupee, stocks, takeaway, trash, tv, users, yt } from '../../utils/Icons';
 import Button from '../Button/Button';
+
 
 function IncomeItem({
     id,
@@ -16,12 +16,13 @@ function IncomeItem({
     type
 }) {
 
+    
     const categoryIcon = () =>{
         switch(category) {
             case 'salary':
                 return money;
             case 'freelancing':
-                return freelance
+                return freelance;
             case 'investments':
                 return stocks;
             case 'stocks':
@@ -62,19 +63,18 @@ function IncomeItem({
         }
     }
 
-    console.log('type', type)
 
     return (
         <IncomeItemStyled indicator={indicatorColor}>
             <div className="icon">
-                {type === 'expense' ? expenseCatIcon() : categoryIcon()}
+            {type === 'expense' ? expenseCatIcon() : categoryIcon()}
             </div>
             <div className="content">
                 <h5>{title}</h5>
                 <div className="inner-content">
                     <div className="text">
-                        <p>{dollar} {amount}</p>
-                        <p>{calender} {dateFormat(date)}</p>
+                        <p>{rupee} {amount}</p>
+                        <p>{calender} {date}</p>
                         <p>
                             {comment}
                             {description}
@@ -89,7 +89,7 @@ function IncomeItem({
                             color={'#fff'}
                             iColor={'#fff'}
                             hColor={'var(--color-green)'}
-                            onClick={() => deleteItem(id)}
+                            onClick={()=>deleteItem(id)}
                         />
                     </div>
                 </div>
