@@ -12,8 +12,7 @@ import {Chart as ChartJs,
 
 import {Line} from 'react-chartjs-2'
 import styled from 'styled-components'
-import { useGlobalContext } from '../../context/globalContext'
-import { dateFormat } from '../../utils/dateFormat'
+
 
 ChartJs.register(
     CategoryScale,
@@ -26,7 +25,7 @@ ChartJs.register(
     ArcElement,
 )
 
-function Chart() {
+function Chart(){
     const {incomes, expenses} = useGlobalContext()
 
     const data = {
@@ -44,6 +43,7 @@ function Chart() {
                     })
                 ],
                 backgroundColor: 'green',
+                tension: .2
             },
             {
                 label: 'Expenses',
@@ -54,14 +54,14 @@ function Chart() {
                     })
                 ],
                 backgroundColor: 'red',
+                tension: .2
             }
         ]
     }
 
-
     return (
-        <ChartStyled >
-            <Line data={data} />
+        <ChartStyled>
+            <Line/>
         </ChartStyled>
     )
 }
