@@ -6,8 +6,8 @@ import { useGlobalContext } from "../../context/globalContext";
 import Button from "../Button/Button";
 import {plus} from '../../utils/Icons'
 
-function Form() {
-    const {addIncome,getIncomes}=useGlobalContext()
+function ExpenseForm() {
+    const {addExpense}=useGlobalContext()
     const [inputState,setInputState] = useState(
         {
             title: '',
@@ -26,7 +26,7 @@ const handleInput = name => e => {
 
 const handleSubmit = e =>{
     e.preventDefault()
-    addIncome(inputState)
+    addExpense(inputState)
     setInputState({
             title: '',
             amount: '',
@@ -37,13 +37,13 @@ const handleSubmit = e =>{
 }
 
     return (
-        <FormStyled onSubmit={handleSubmit}>
+        <ExpenseFormStyled onSubmit={handleSubmit}>
             <div className="input-control">
                 <input 
                 type="text"
                 value={title}
                 name={'title'}
-                placeholder="Salary Title"
+                placeholder="Expense Title"
                 onChange={handleInput('title')}
                 />
             </div>
@@ -51,7 +51,7 @@ const handleSubmit = e =>{
                 <input value={amount}
                 type="text"
                 name={'amount'}
-                placeholder={'Salary Amount'}
+                placeholder={'Expense Amount'}
                 onChange={handleInput('amount')}
                 />
             </div>
@@ -84,7 +84,7 @@ const handleSubmit = e =>{
             </div>
             <div className="submit-btn">
             <Button 
-                    name={'Add Income'}
+                    name={'Add Expense'}
                     icon={plus}
                     bPad={'.8rem 1.6rem'}
                     bRad={'30px'}
@@ -92,12 +92,12 @@ const handleSubmit = e =>{
                     color={'#fff'}
                 />
             </div>
-        </FormStyled>
+        </ExpenseFormStyled>
     )
 }
 
 
-const FormStyled =styled.form`
+const ExpenseFormStyled =styled.form`
 display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -142,4 +142,4 @@ display: flex;
             }
         }
     }`;
-export default Form
+export default ExpenseForm
