@@ -95,7 +95,9 @@ const transactionHistory = () =>{
             deleteExpense,
             totalExpenses,
             totalBalance,
-            transactionHistory
+            transactionHistory,
+            error,
+            setError
         }}>
             {children}
         </GlobalContext.Provider>
