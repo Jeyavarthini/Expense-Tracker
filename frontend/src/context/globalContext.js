@@ -79,7 +79,7 @@ const transactionHistory = () =>{
         return new Date(b.createdAt) - new Date(a.createdAt)
     })
 
-    return history
+    return history.slice(0,3)
 }
 
     return (

@@ -45,7 +45,7 @@ const data ={
                   return amount
               })
             ],
-            backgroundColor:'blue',
+            backgroundColor:'green',
             tension: .2
         },
         {
@@ -56,7 +56,7 @@ const data ={
                 return amount
             })
           ],
-          backgroundColor:'green',
+          backgroundColor:'red',
           tension: .2
       }
     ]
